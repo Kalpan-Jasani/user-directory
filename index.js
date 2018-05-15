@@ -10,7 +10,7 @@ function changeText(ev)
     //getting text from the input
     let text1 = input1.value.toString();
 
-    //setting heading with the text (but kalpan for debugging)
+    //setting heading with the text
     heading2.innerHTML = text1;
 }
 

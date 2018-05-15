@@ -1,11 +1,9 @@
-const button = document.querySelector('button.greeting');
+const button1 = document.getElementById("button1");
 
-function changeText()
+function changeText(ev)
 {
-    const paragraph =  document.querySelector('p.greeting');
-    paragraph.textContent = 'You done clicked!';
+    const heading1 = document.getElementById("theHeading");
+    heading1.innerHTML = "User directory for Kalpan";
 }
 
-
-
-button.addEventListener("click", changeText);
+button1.addEventListener("click", changeText);

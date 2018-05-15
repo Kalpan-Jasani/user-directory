@@ -4,17 +4,17 @@ function changeText(ev)
 {
     //prevent submission of form
     ev.preventDefault();
-    
-    //get the heading and the input element
-    const heading2 = document.getElementById("heading2");
-    const input1 = document.getElementById("userText1");
 
+    //get the heading and the input element
+    const div1 = document.getElementById("userEntries");
+    const input1 = document.getElementById("userText1");
 
     //getting text from the input
     let text1 = input1.value.toString();
 
-    //setting heading with the text
-    heading2.innerHTML = text1;
+    //appending name to entries
+    let text2 = "<p>" + text1 + "</p1>";
+    div1.innerHTML += text2;
 }
 
 form1.addEventListener("submit", changeText);

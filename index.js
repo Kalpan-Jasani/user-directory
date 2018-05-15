@@ -24,4 +24,5 @@ form1.addEventListener("submit", changeText);
 
 //TODO: have hint for entries
 //TODO: have focus on first field on load and  on reset
-//TODO: have age entry to allow only numbers
+//TODO: have tab formatting for the entries
+//TODO: have appendChilds

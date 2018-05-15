@@ -1,7 +1,10 @@
-const button2 = document.getElementById("button2");
+const form1 = document.getElementById("userForm");
 
 function changeText(ev)
 {
+    //prevent submission of form
+    ev.preventDefault();
+    
     //get the heading and the input element
     const heading2 = document.getElementById("heading2");
     const input1 = document.getElementById("userText1");
@@ -14,4 +17,4 @@ function changeText(ev)
     heading2.innerHTML = text1;
 }
 
-button2.addEventListener("click", changeText);
+form1.addEventListener("submit", changeText);

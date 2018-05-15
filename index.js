@@ -18,11 +18,11 @@ function changeText(ev)
 
     //clear out the entry on submit
     form1.reset();
+    form1.userName.focus();
 }
 
 form1.addEventListener("submit", changeText);
 
-//TODO: have hint for entries
 //TODO: have focus on first field on load and  on reset
 //TODO: have tab formatting for the entries
 //TODO: have appendChilds

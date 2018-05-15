@@ -15,6 +15,9 @@ function changeText(ev)
     //appending name to entries
     let text2 = "<p>" + text1 + "</p1>";
     div1.innerHTML += text2;
+
+    //clear out the entry on submit
+    ev.target.reset();
 }
 
 form1.addEventListener("submit", changeText);

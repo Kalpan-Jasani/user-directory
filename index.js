@@ -19,11 +19,11 @@ function onSubmit(ev)
 function renderColor(colorString)
 {
     //create a div element
-    const aDiv = document.createElement("DIV");
+    const aSpan = document.createElement("SPAN");
 
     //set the background for the div tag
-    aDiv.style.backgroundColor = colorString;
-    return aDiv;
+    aSpan.style.backgroundColor = colorString;
+    return aSpan;
 }
 function renderList()
 {
@@ -48,13 +48,13 @@ function renderListItem(modeString, name, value)
         const textNode1 = document.createTextNode("Favorite color: ");
         listItem.appendChild(textNode1);
 
-        //get a div with a specific color. The color is stored in the second argument when using this function to make a list item for a color entry
-        const colorDiv = renderColor(name);
-        colorDiv.style.height = "1em";
-        colorDiv.style.width = "2em";
-        listItem.appendChild(colorDiv);
+        //get a tile (a span element()) with a specific color. The color is stored in the second argument when using this function to make a list item for a color entry
+        const colorTile = renderColor(name);
+        colorTile.style.height = "1em";
+        colorTile.style.width = "2em";
+        colorTile.style.display = "inline-block";
+        listItem.appendChild(colorTile);
         return listItem;
-        //TODO:have div tag on same line as favorite icon text label
     }
     else
     {

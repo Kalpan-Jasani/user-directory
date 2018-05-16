@@ -7,9 +7,19 @@ function onSubmit(ev)
 
     //get the userentry div tag
     const div1 = document.getElementById("userEntries");
+    const nameString = form1.userName.value;
+    const age = form1.ageEntry.value;
+    const colorString = form1.colorEntry.value;
+
+    const user = 
+    {
+        'name': nameString,
+        'age': age,
+        'Favorite Color': colorString,
+    };
 
     //create and put a list into the div tag
-    div1.appendChild(renderList());
+    div1.appendChild(renderList(user));
 
     //clear out the entry on submit
     form1.reset();
@@ -25,17 +35,24 @@ function renderColor(colorString)
     aSpan.style.backgroundColor = colorString;
     return aSpan;
 }
-function renderList()
+function renderList(user)
 {
     const list1 = document.createElement("UL");
-    const nameString = form1.userName.value;
-    const age = form1.ageEntry.value;
-    const colorString = form1.colorEntry.value;
 
     //render the list items and append them to the list
-    list1.appendChild(renderListItem("name", "Name", nameString));
-    list1.appendChild(renderListItem("age", "Age", age));
-    list1.appendChild(renderListItem("color", colorString));
+    for(key in user)
+    {
+        let item;
+
+        //if the key is actually the color variable
+        if(key == "Favorite Color")
+            item = renderListItem("color", key, user[key]);
+        else
+            item = renderListItem(undefined, key, user[key]);
+
+        list1.appendChild(item);
+    }
+
     return list1;
 }
 
@@ -49,7 +66,7 @@ function renderListItem(modeString, name, value)
         listItem.appendChild(textNode1);
 
         //get a tile (a span element()) with a specific color. The color is stored in the second argument when using this function to make a list item for a color entry
-        const colorTile = renderColor(name);
+        const colorTile = renderColor(value);
         colorTile.style.height = "1em";
         colorTile.style.width = "2em";
         colorTile.style.display = "inline-block";

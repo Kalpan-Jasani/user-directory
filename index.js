@@ -9,12 +9,14 @@ function changeText(ev)
     const div1 = document.getElementById("userEntries");
 
     //getting text from the input
-    let text1 = form1.userName.value;
-    let text2 = form1.ageEntry.value;
+    const text1 = form1.userName.value;
+    const text2 = form1.ageEntry.value;
 
+    const para1 = document.createElement('P');
+    para1.innerHTML = `${text1}, ${text2}`;
+    
     //appending name to entries
-    let text3 = `<p>${text1}, ${text2}</p>`;
-    div1.innerHTML += text3;
+    div1.appendChild(para1);
 
     //clear out the entry on submit
     form1.reset();
@@ -23,6 +25,5 @@ function changeText(ev)
 
 form1.addEventListener("submit", changeText);
 
-//TODO: have focus on first field on load and  on reset
 //TODO: have tab formatting for the entries
 //TODO: have appendChilds

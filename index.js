@@ -49,7 +49,10 @@ function renderListItem(modeString, name, value)
         listItem.appendChild(textNode1);
 
         //get a div with a specific color. The color is stored in the second argument when using this function to make a list item for a color entry
-        listItem.appendChild(renderColor(name));
+        const colorDiv = renderColor(name);
+        colorDiv.style.height = "1em";
+        colorDiv.style.width = "2em";
+        listItem.appendChild(colorDiv);
         return listItem;
         //TODO:have div tag on same line as favorite icon text label
     }
